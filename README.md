@@ -25,3 +25,5 @@ crawler for [web.klokah.tw](https://web.klokah.tw)
 | 教學模組 | web.klokah.tw/mode/ | mode |
 | 互動模組 | web.klokah.tw/interact/ | interact |
 | LIMA 有聲書 | web.klokah.tw/lima/ | lima |
+| 看影片學族語 | https://web.klokah.tw/videoLearning/ | video_learning |
+| 親子族語 | https://web.klokah.tw/parent-child/ | parent_child |
