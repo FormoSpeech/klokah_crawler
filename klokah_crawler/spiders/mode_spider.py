@@ -11,7 +11,7 @@ JSON_MAP = {
 class ModeSpider(scrapy.Spider):
     name = "mode"
 
-    def start_requests(self):
+    async def start(self):
         for dialect_id in [i for i in range(1, 44) if i != 12]:
             # elementary
             for category in JSON_MAP["elementary"]:

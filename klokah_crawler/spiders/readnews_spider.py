@@ -6,7 +6,7 @@ from klokah_crawler.items import KlokahCrawlerItem
 class ReadNewsSpider(scrapy.Spider):
     name = "readnews"
 
-    def start_requests(self):
+    async def start(self):
         yield scrapy.Request(
             url="https://web.klokah.tw/readnews/php/getNews.php?d=0&t=&p=1",
             callback=self.get_page_of_news,

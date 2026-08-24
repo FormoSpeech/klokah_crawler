@@ -8,7 +8,7 @@ from klokah_crawler.utils.parse_sp import TYPE_ID_TYPE_NAME_MAP, parse_metadata
 class SpJuniorSpider(scrapy.Spider):
     name = "sp_junior"
 
-    def start_requests(self):
+    async def start(self):
         yield scrapy.Request(
             url="https://web.klokah.tw/extension/sp_data/junior/classView.xml",
             callback=self.get_class_xml,

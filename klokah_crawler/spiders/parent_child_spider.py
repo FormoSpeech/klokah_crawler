@@ -6,7 +6,7 @@ from klokah_crawler.items import KlokahCrawlerItem
 class ParentChildSpider(scrapy.Spider):
     name = "parent_child"
 
-    def start_requests(self):
+    async def start(self):
         yield scrapy.Request(
             url="https://web.klokah.tw/parent-child/json/tid.json",
             callback=self.get_topic_info,

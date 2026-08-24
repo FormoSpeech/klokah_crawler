@@ -6,14 +6,13 @@
 import os
 
 from itemadapter import ItemAdapter
-from scrapy.utils.project import get_project_settings
 
 from klokah_crawler.dialect_id_map import DIALECT_ID_MAP
 from klokah_crawler.items import KlokahCrawlerSaveItem
 
 
 class PreDownloadPipeline:
-    def process_item(self, item, spider):
+    def process_item(self, item):
         adapter = ItemAdapter(item)
         if len(adapter["audio_url"]) > 0 and adapter["audio_url"][0] is None:
             adapter["audio_url"] = []
@@ -23,8 +22,15 @@ class PreDownloadPipeline:
 
 
 class PostDownloadPipeline:
-    def process_item(self, item, spider):
-        storage_folder = get_project_settings().get("FILES_STORE")
+    def __init__(self, files_store):
+        self.files_store = files_store
+
+    @classmethod
+    def from_crawler(cls, crawler):
+        return cls(crawler.settings["FILES_STORE"])
+
+    def process_item(self, item):
+        storage_folder = self.files_store
 
         adapter = ItemAdapter(item)
         audio_path = None

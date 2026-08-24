@@ -6,7 +6,7 @@ from klokah_crawler.items import KlokahCrawlerItem
 class CuPracticeWordSpider(scrapy.Spider):
     name = "cu_practice_word"
 
-    def start_requests(self):
+    async def start(self):
         for dialect_id in [i for i in range(1, 44) if i != 12]:
             yield scrapy.Request(
                 url=f"https://web.klokah.tw/extension/cu_data/get_data.php?did={dialect_id}",

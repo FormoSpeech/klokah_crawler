@@ -8,7 +8,7 @@ from klokah_crawler.items import KlokahCrawlerItem
 class VideoLearningSpider(scrapy.Spider):
     name = "video_learning"
 
-    def start_requests(self):
+    async def start(self):
         yield scrapy.Request(
             url="https://web.klokah.tw/videoLearning/json/videoId.json",
             callback=self.get_video_info,

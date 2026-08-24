@@ -8,7 +8,7 @@ from klokah_crawler.utils.parse_rd_practice import parse_vocabulary_metadata
 class RdPracticeWordSpider(scrapy.Spider):
     name = "rd_practice_word"
 
-    def start_requests(self):
+    async def start(self):
         for dialect_id in [i for i in range(1, 44) if i != 12]:
             yield scrapy.Request(
                 url=f"https://web.klokah.tw/extension/rd_data/xml/{dialect_id}/reading.xml",

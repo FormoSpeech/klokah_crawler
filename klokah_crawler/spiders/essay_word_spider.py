@@ -6,7 +6,7 @@ from klokah_crawler.utils.parse_read_embed import parse_read_embed
 class EssayWordSpider(scrapy.Spider):
     name = "essay_word"
 
-    def start_requests(self):
+    async def start(self):
         for dialect_id in [i for i in range(1, 44) if i != 12]:
             yield scrapy.Request(
                 url=f"https://web.klokah.tw/essay/json/ES112{dialect_id:02}.json",

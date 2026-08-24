@@ -6,7 +6,7 @@ from klokah_crawler.utils.parse_read_embed import parse_read_embed
 class RdPracticeSpider(scrapy.Spider):
     name = "rd_practice"
 
-    def start_requests(self):
+    async def start(self):
         yield scrapy.Request(
             url="https://web.klokah.tw/extension/rd_practice/textId.json",
             callback=self.get_read_embed_url,

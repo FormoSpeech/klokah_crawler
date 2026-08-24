@@ -8,7 +8,7 @@ from klokah_crawler.utils.parse_con_practice import parse_content_metadata
 class ConPracticeSpider(scrapy.Spider):
     name = "con_practice"
 
-    def start_requests(self):
+    async def start(self):
         for dialect_id in [i for i in range(1, 44) if i != 12]:
             yield scrapy.Request(
                 url=f"https://web.klokah.tw/extension/con_data/xml/{dialect_id}/conversation.xml",

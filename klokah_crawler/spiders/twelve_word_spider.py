@@ -7,7 +7,7 @@ from klokah_crawler.spiders.twelve_spider import audio_url, twelve_dialect_map
 class TwelveWordSpider(scrapy.Spider):
     name = "twelve_word"
 
-    def start_requests(self):
+    async def start(self):
         urls = [
             (
                 class_id,

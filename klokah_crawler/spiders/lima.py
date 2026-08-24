@@ -6,7 +6,7 @@ from klokah_crawler.items import KlokahCrawlerItem
 class LimaSpider(scrapy.Spider):
     name = "lima"
 
-    def start_requests(self):
+    async def start(self):
         urls = [
             (
                 dialect_id,

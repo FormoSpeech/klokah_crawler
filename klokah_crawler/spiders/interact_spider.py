@@ -6,7 +6,7 @@ from klokah_crawler.items import KlokahCrawlerItem
 class InteractSpider(scrapy.Spider):
     name = "interact"
 
-    def start_requests(self):
+    async def start(self):
         for dialect_id in [i for i in range(1, 44) if i != 12]:
             # primaryInteract_new
             primary_interact_stages = [

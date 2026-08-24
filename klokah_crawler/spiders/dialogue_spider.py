@@ -6,7 +6,7 @@ from klokah_crawler.items import KlokahCrawlerItem
 class DialogueSpider(scrapy.Spider):
     name = "dialogue"
 
-    def start_requests(self):
+    async def start(self):
         for dialect_id in [i for i in range(1, 44) if i != 12]:
             yield scrapy.Request(
                 url=f"https://web.klokah.tw/dialogue/json/SN112{dialect_id:02}.json",

@@ -6,7 +6,7 @@ from klokah_crawler.utils.parse_read_embed import parse_read_embed
 class ReadingTextSpider(scrapy.Spider):
     name = "readingtext"
 
-    def start_requests(self):
+    async def start(self):
         yield scrapy.Request(
             url="https://web.klokah.tw/extension/readingtext/textId.json",
             callback=self.get_read_embed_url,

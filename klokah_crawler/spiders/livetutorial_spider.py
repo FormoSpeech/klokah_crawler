@@ -7,7 +7,7 @@ from klokah_crawler.utils.parse_read_embed import parse_read_embed
 class LiveTutorialSpider(scrapy.Spider):
     name = "livetutorial"
 
-    def start_requests(self):
+    async def start(self):
         urls = [
             (
                 dialect_id,

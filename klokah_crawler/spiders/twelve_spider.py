@@ -54,7 +54,7 @@ audio_url = "https://web.klokah.tw/ninew/sound"
 class TwelveSpider(scrapy.Spider):
     name = "twelve"
 
-    def start_requests(self):
+    async def start(self):
         urls = [
             (
                 class_id,

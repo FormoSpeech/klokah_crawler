@@ -25,7 +25,7 @@ DIALECT_ID_LANGUAGE_ID_MAP = {
 class PBCSpider(scrapy.Spider):
     name = "pbc"
 
-    def start_requests(self):
+    async def start(self):
         yield scrapy.Request(
             url="https://web.klokah.tw/pbc/",
             callback=self.get_book_url,
