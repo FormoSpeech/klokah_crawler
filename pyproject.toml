@@ -3,9 +3,13 @@ name = "klokah-crawler"
 version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
+authors = [
+    { name = "txya900619", email = "wayne900619@gmail.com" }
+]
 requires-python = ">=3.11"
 dependencies = [
     "scrapy>=2.12.0",
     "twisted>=24.11.0",
     "xmltodict>=0.14.2",
 ]
+
